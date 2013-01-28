@@ -10,9 +10,9 @@ A small php script that displays the details of a Mumble server that supports th
 
 Developed primarily for three reasons:
 
-* Limit intrusiveness - doesn't display potentially sensitive information such as administration privileges, idle time and operating system.
-* Dynamic resizing - other solutions are often within an iframe of pre-determined size. This means potentially unwanted space or a scrollbar.
-* Full customisability - the stylesheet can be freely modified.
+* *Limit intrusiveness* - doesn't display potentially sensitive information such as administration privileges, idle time and operating system.
+* *Dynamic resizing* - other solutions are often within an iframe of pre-determined size. This means potentially unwanted space or a scrollbar.
+* *Full customisability* - the stylesheet can be freely modified.
 
 Install
 -------
