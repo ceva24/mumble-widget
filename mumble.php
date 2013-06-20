@@ -1,20 +1,20 @@
 <?php
 	error_reporting(0);
 
-	$file = "<url-to-json-feed>";
+	$file = "";
 
 	$icon_mumble = "icons/mumble.png";
 	$icon_channel = "icons/channel.png";
 	$icon_user_on = "icons/user_on.png";
 	$icon_user_off = "icons/user_off.png";
 
-	$mumble = json_decode(file_get_contents($file), true);
+	$mumble_feed = json_decode(file_get_contents($file), true);
 
-	echo "<img src=\"".$icon_mumble."\" /><span style=\"font-weight: bold;\">&nbsp;".$mumble['name']."</span><br />";
+	echo "<img src=\"".$icon_mumble."\" /><span style=\"font-weight: bold;\">&nbsp;".$mumble_feed['name']."</span><br />";
 
 	echo "<div style=\"padding-left: 25px;\">";
 
-	$channels = $mumble['root']['channels'];
+	$channels = $mumble_feed['root']['channels'];
 	displayChannels($channels);
 
 	echo "</div>";
