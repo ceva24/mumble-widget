@@ -1,7 +1,7 @@
 <?php
 	error_reporting(0);
 
-	$file = "cvp.json";
+	$file = "";
 
 	$icon_mumble = "icons/mumble.png";
 	$icon_channel = "icons/channel.png";
