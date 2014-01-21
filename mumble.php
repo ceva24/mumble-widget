@@ -1,7 +1,7 @@
 <?php
 	error_reporting(0);
 
-	$file = "";
+	$file = "cvp.json";
 
 	$icon_mumble = "icons/mumble.png";
 	$icon_channel = "icons/channel.png";
@@ -10,11 +10,11 @@
 
 	$mumble_feed = json_decode(file_get_contents($file), true);
 
-	echo "<img src=\"".$icon_mumble."\" /><span style=\"font-weight: bold;\">&nbsp;".$mumble_feed['name']."</span><br />";
+	echo "<img src=\"".$icon_mumble."\" /><span style=\"font-weight: bold;\">&nbsp;".$mumble_feed["name"]."</span><br />";
 
 	echo "<div style=\"padding-left: 25px;\">";
 
-	$channels = $mumble_feed['root']['channels'];
+	$channels = $mumble_feed["root"]["channels"];
 	displayChannels($channels);
 
 	echo "</div>";
@@ -25,24 +25,36 @@
 
 		foreach ($channels as $channel)
 		{
-			echo "<img src=\"".$icon_channel."\" />&nbsp;<a href=\"".$channel['x_connecturl']."\">".$channel['name']."</a><br />";
+			echo "<img src=\"".$icon_channel."\" />&nbsp;<a href=\"".$channel["x_connecturl"]."\">".$channel["name"]."</a><br />";
 
 			echo "<div style=\"padding-left: 25px;\">";
 
-			$subchannels = $channel['channels'];
+			$subchannels = $channel["channels"];
 			if (sizeof($subchannels) > 0)
 			{
 				displayChannels($subchannels);
 			}
 
-			$users = $channel['users'];
+			$users = $channel["users"];
+			usort($users, "compareByName");
 			foreach($users as $user)
 			{
-				$icon_user = ($user['bytespersec'] == 0 ? $icon_user_off : $icon_user_on);
-				echo "<img src=\"".$icon_user."\" />&nbsp;".$user['name']."<br />";
+				$icon_user = ($user["bytespersec"] == 0 ? $icon_user_off : $icon_user_on);
+
+				echo "<img src=\"".$icon_user."\" />&nbsp;".substr($user["name"], 0, 20);
+				if (strlen($user["name"]) > 20)
+				{
+					echo "...";
+				}
+				echo "<br />";
 			}
 
 			echo "</div>";
 		}
+	}
+
+	function compareByName($user1, $user2)
+	{
+		return strcasecmp($user1["name"], $user2["name"]);
 	}
 ?>
