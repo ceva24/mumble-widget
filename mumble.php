@@ -41,7 +41,7 @@
 			{
 				$icon_user = ($user["bytespersec"] == 0 ? $icon_user_off : $icon_user_on);
 
-				echo "<span title=\"",$user["name"]."\"><img src=\"".$icon_user."\" />&nbsp;".substr($user["name"], 0, 20);
+				echo "<span title=\"".$user["name"]."\"><img src=\"".$icon_user."\" />&nbsp;".substr($user["name"], 0, 20);
 				if (strlen($user["name"]) > 20)
 				{
 					echo "...";
