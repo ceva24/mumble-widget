@@ -23,7 +23,7 @@ Install
 
 Example
 ------------
-![mumble widget](http://www.ceva24.co.uk/pages/images/mumble-widget.png "mumble-widget example screenshot")
+![mumble widget](https://www.ceva24.dev/public/images/mumble-widget.png "mumble-widget example screenshot")
 
 Contribution
 ------------
