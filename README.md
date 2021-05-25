@@ -1,7 +1,7 @@
 mumble-widget
 =============
 
-A widget to display users and channels on a Mumble server.
+This is a widget I wrote to display users and channels on a Mumble server I used to administer.
 
 Introduction
 ------------
@@ -14,6 +14,8 @@ Developed primarily for three reasons:
 * *Dynamic resizing* - other solutions are often within an iframe of pre-determined size. This means potentially unwanted space or a scrollbar.
 * *Full customisability* - the stylesheet can be freely modified.
 
+Also has a [JavaScript implementation](https://github.com/ceva24/mumble-widget.js).
+
 Install
 -------
 
@@ -24,8 +26,3 @@ Install
 Example
 ------------
 ![mumble widget](https://www.ceva24.dev/public/images/mumble-widget.png "mumble-widget example screenshot")
-
-Contribution
-------------
-
-Feel free to fork this project to include additional functionality as you desire.
